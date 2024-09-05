@@ -1,171 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel & Tourism</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-gray-100">
-
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-100">
     <!-- Hero Section -->
-    <header class="relative h-screen bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1600x900/?travel');">
-        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
-            <h1 class="text-5xl font-bold mb-4 animate-fadeIn">Explore the World with Us</h1>
-            <p class="text-2xl mb-8 animate-fadeIn">Discover hidden gems, eco-friendly stays, and rich cultures.</p>
-            <a href="#about" class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full animate-fadeIn">Start Your Journey</a>
-        </div>
+    <header
+      class="relative h-screen bg-cover bg-center"
+      style="
+        background-image: url('https://source.unsplash.com/1600x900/?travel');
+      "
+    >
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white"
+      >
+        <h1 class="text-5xl font-bold mb-4 animate-fadeIn">
+          Explore the World with Us
+        </h1>
+        <p class="text-2xl mb-8 animate-fadeIn">
+          Discover hidden gems, eco-friendly stays, and rich cultures.
+        </p>
+        <a
+          href="#about"
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full animate-fadeIn"
+          >Start Your Journey</a
+        >
+      </div>
     </header>
 
+    <!-- navbar -->
+
+    <section
+      id="navbar"
+      class="fixed top-0 h-16 w-full bg-gray-600 flex justify-between items-center z-10"
+    >
+      <div class="logo">
+        <h3 class="text-2xl text-white p-2">
+            <img src="travel-logo-design-travel-agency-logo_513640-3544-removebg-preview.png" alt="" class="w-28">
+        </h3>
+      </div>
+
+      <div class="links">
+        <a href="" class="px-4 py-2 text-white hover:text-gray-500">Home</a>
+        <a href="#about" class="px-4 py-2 text-white hover:text-gray-500 Click"
+          >About</a
+        >
+        <a
+          href="#interactive-map"
+          class="px-4 py-2 text-white hover:text-gray-500"
+          >Interactive Map</a
+        >
+        <a href="#blog" class="px-4 py-2 text-white hover:text-gray-500"
+          >Blog</a
+        >
+
+        <a href="#culture" class="px-4 py-2 text-white hover:text-gray-500" >Rich Culture & Heritage</a>
+
+        <a href="#" class="px-4 py-2 text-white hover:text-gray-500"
+        >Contact</a
+      >
+      </div>
+    </section>
+
     <!-- AI-Driven Personalization Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">AI-Driven Personalization</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">Our advanced AI customizes your travel experience, making it unique and tailored just for you. Whether it's suggesting destinations, accommodations, or activities, our AI ensures your trip is perfect.</p>
+    <section id="about" class="py-20 bg-white max-h-full">
+      <div class="container mx-auto px-6 flex items-center justify-around">
+        <!-- <h1 class="float-center font-bold text-4xl text-gray-500 ml-8">Ai feature</h1> -->
+        <ul class="w-72 py-4 ml-8">
+          <h1 class="float-center font-bold text-4xl text-gray-500">
+            Ai feature
+          </h1>
+          <li class="py-2">
+            * AI chatbots use machine learning algorithms to learn from user
+            interactions and improve over time. By analyzing past conversations,
+            they can provide more accurate and personalized responses.
+          </li>
+          <li class="py-4">
+            * AI chatbots can personalize interactions by using data such as
+            user preferences, history, and behavior.
+          </li>
+          <li class="py-3">
+            * AI chatbots can be integrated with various external systems like
+            CRM, databases, payment gateways, and third-party APIs.
+          </li>
+        </ul>
+        <div class="chat-container">
+          <div class="chat-box" id="chat-box">
+            <div class="message bot-message">
+              Hello! How can I assist you today?
+            </div>
+          </div>
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message..."
+            autocomplete="off"
+          />
+          <button onclick="sendMessage()">Send</button>
         </div>
+      </div>
     </section>
 
     <!-- Interactive Map Section -->
     <section id="interactive-map" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Explore Destinations</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp mb-8">Click on a destination to learn more about it!</p>
-            <div id="map" class="h-96 bg-gray-300 rounded-lg shadow-md animate-fadeInUp">
-                <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0347552883054!2d77.37711497503417!3d23.241822308111345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430890ba4849%3A0x4f1eb58019e009cf!2sLake%20View%2C%20Bhopal!5e0!3m2!1sen!2sin!4v1725440591596!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Explore Destinations
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp mb-8">
+          Click on a destination to learn more about it!
+        </p>
+        <div
+          id="map"
+          class="h-96 bg-gray-300 rounded-lg shadow-md animate-fadeInUp"
+        >
+          <iframe
+            class="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.0347552883054!2d77.37711497503417!3d23.241822308111345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430890ba4849%3A0x4f1eb58019e009cf!2sLake%20View%2C%20Bhopal!5e0!3m2!1sen!2sin!4v1725440591596!5m2!1sen!2sin"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
+      </div>
     </section>
 
     <!-- Eco-Friendly Accommodations Section -->
     <section id="eco-friendly" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Eco-Friendly Accommodations</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">Stay in environmentally conscious hotels that offer premium services while caring for the planet. Our partners are committed to sustainability, offering green stays without compromising on comfort.</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Eco-Friendly Accommodations
+        </h2>
+
+        <ul
+          class="w-1/2 bg-zinc-700 text-left px-10 py-4 leading-8 text-blue-800"
+        >
+          <li>
+            <a href="https://youtube.com"
+              >Highlight Green Certifications -
+              <a class="text-black" href="">Check here</a></a
+            >
+          </li>
+          <li>
+            <a href=""
+              >Energy Efficiency Details -
+              <a class="text-black" href="">Check here</a></a
+            >
+          </li>
+          <li>
+            <a href=""
+              >Eco-Friendly Building Materials -
+              <a class="text-black" href="">Check here</a></a
+            >
+          </li>
+          <li>
+            <a href=""
+              >Waste Management and Recycling Programs -
+              <a class="text-black" href="">Check here</a></a
+            >
+          </li>
+          <li>
+            <a href=""
+              >Use of Organic and Locally Sourced Products -
+              <a class="text-black" href="">Check here</a></a
+            >
+          </li>
+        </ul>
+
+        <section id="accommodations">
+          <div class="accommodation-card">
+            <img src="eco-accommodation.jpg" alt="Eco Accommodation" />
+            <h2>Green Valley Resort</h2>
+            <p>
+              Experience nature with sustainable comfort, powered by solar
+              energy and built with eco-friendly materials.
+            </p>
+            <ul>
+              <li>🌿 LEED Certified</li>
+              <li>💧 Rainwater Harvesting</li>
+              <li>🔋 Solar Panels for Energy</li>
+              <li>♻️ Recycling & Composting Facilities</li>
+            </ul>
+            <button class="more-info-btn w-full text-center mt-4">
+              More Info
+            </button>
+          </div>
+
+          <!-- Add more accommodation cards as needed -->
+        </section>
+
+        <!-- Eco-Friendly Features Section -->
+        <section id="features">
+          <h2>Eco-Friendly Features</h2>
+          <div class="feature">
+            <h3>Energy Efficiency</h3>
+            <p>
+              Accommodations use solar panels, energy-efficient lighting, and
+              smart energy management systems.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Water Conservation</h3>
+            <p>
+              Properties employ low-flow toilets, rainwater harvesting, and
+              greywater recycling systems.
+            </p>
+          </div>
+          <!-- Add more features as needed -->
+        </section>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">What Our Travelers Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-lg shadow-lg animate-fadeInUp">
-                    <p class="text-gray-600">"This was the best vacation ever! The personalized recommendations were spot-on. Can't wait to travel again!"</p>
-                    <p class="mt-4 text-red-500 font-bold">- Aditya</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-lg animate-fadeInUp">
-                    <p class="text-gray-600">"Loved the eco-friendly hotels. Traveling sustainably has never been easier!"</p>
-                    <p class="mt-4 text-red-500 font-bold">- Aditya</p>
-                </div>
-                <div class="p-6 bg-white rounded-lg shadow-lg animate-fadeInUp">
-                    <p class="text-gray-600">"The hidden gems were a delightful surprise! Truly made our trip unforgettable."</p>
-                    <p class="mt-4 text-red-500 font-bold">- Aditya</p>
-                </div>
-            </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          What Our Travelers Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 bg-white rounded-lg shadow-lg animate-fadeInUp">
+            <p class="text-gray-600">
+              "This was the best vacation ever! The personalized recommendations
+              were spot-on. Can't wait to travel again!"
+            </p>
+            <p class="mt-4 text-red-500 font-bold">- Aditya</p>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-lg animate-fadeInUp">
+            <p class="text-gray-600">
+              "Loved the eco-friendly hotels. Traveling sustainably has never
+              been easier!"
+            </p>
+            <p class="mt-4 text-red-500 font-bold">- Aditya</p>
+          </div>
+          <div class="p-6 bg-white rounded-lg shadow-lg animate-fadeInUp">
+            <p class="text-gray-600">
+              "The hidden gems were a delightful surprise! Truly made our trip
+              unforgettable."
+            </p>
+            <p class="mt-4 text-red-500 font-bold">- Aditya</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Community-Based Tourism Section -->
     <section id="community-based" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Community-Based Tourism</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">Immerse yourself in local cultures and communities. Our community-based tourism initiatives ensure that your travel experience is authentic and that it directly benefits the people and places you visit.</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Community-Based Tourism
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp">
+          Immerse yourself in local cultures and communities. Our
+          community-based tourism initiatives ensure that your travel experience
+          is authentic and that it directly benefits the people and places you
+          visit.
+        </p>
+      </div>
     </section>
 
     <!-- Subscription Form Section -->
     <section id="subscription" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Subscribe for Travel Tips & Deals</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp mb-8">Get the latest travel news, tips, and exclusive deals delivered right to your inbox.</p>
-            <form class="flex justify-center animate-fadeInUp">
-                <input type="email" placeholder="Enter your email" class="w-1/3 p-3 rounded-l-lg border-gray-300">
-                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-r-lg">Subscribe</button>
-            </form>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Subscribe for Travel Tips & Deals
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp mb-8">
+          Get the latest travel news, tips, and exclusive deals delivered right
+          to your inbox.
+        </p>
+        <form class="flex justify-center animate-fadeInUp">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="w-1/3 p-3 rounded-l-lg border-gray-300"
+          />
+          <button
+            type="submit"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-r-lg w-28"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- Ensuring Contactless Services Section -->
     <section id="contactless-services" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Ensuring Contactless Services</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">Your health and safety are our top priority. Enjoy seamless contactless services throughout your journey, from booking to check-in, ensuring a safe and stress-free travel experience.</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Ensuring Contactless Services
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp">
+          Your health and safety are our top priority. Enjoy seamless
+          contactless services throughout your journey, from booking to
+          check-in, ensuring a safe and stress-free travel experience.
+        </p>
+      </div>
     </section>
 
     <!-- Photo Gallery Section -->
     <section id="gallery" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Photo Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <img src="https://imgs.search.brave.com/jX6vR4n8a85aQLk67ZXnFfgix19tGvAiXIiEq707rgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuYWxsLWZyZWUt/ZG93bmxvYWQuY29t/L2ltYWdlcy90aHVt/YmpwZy90cmF2ZWxf/NTEzMzA2LmpwZw" alt="Travel Photo" class="w-full h-64 object-cover rounded-lg shadow-lg animate-fadeInUp">
-                <img src="https://imgs.search.brave.com/_UzLv1Ahzb37NfoMnky2ZW5CQx-nHGVj4n7DhvxILSk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/aWV3LWJlYXV0aWZ1/bC1yYWluYm93LW5h/dHVyZS1sYW5kc2Nh/cGVfMjMtMjE1MTU5/NzYwNS5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw" alt="Nature Photo" class="w-full h-64 object-cover rounded-lg shadow-lg animate-fadeInUp">
-                <img src="https://imgs.search.brave.com/HTtAgSunfJkrkdbHy8xD2hBfu-ZRPFXy8P5B1khxu8k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/ZW9wbGUtY2VsZWJy/YXRpbmctbmV3LXll/YXItcy1ldmUtdGhl/aXItdHJhZGl0aW9u/YWwtY3VsdHVyZV8y/My0yMTUwOTAxOTA4/LmpwZz9zaXplPTYy/NiZleHQ9anBn" alt="Culture Photo" class="w-full h-64 object-cover rounded-lg shadow-lg animate-fadeInUp">
-            </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Photo Gallery
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <img
+            src="https://imgs.search.brave.com/jX6vR4n8a85aQLk67ZXnFfgix19tGvAiXIiEq707rgI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuYWxsLWZyZWUt/ZG93bmxvYWQuY29t/L2ltYWdlcy90aHVt/YmpwZy90cmF2ZWxf/NTEzMzA2LmpwZw"
+            alt="Travel Photo"
+            class="w-full h-64 object-cover rounded-lg shadow-lg animate-fadeInUp"
+          />
+          <img
+            src="https://imgs.search.brave.com/_UzLv1Ahzb37NfoMnky2ZW5CQx-nHGVj4n7DhvxILSk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/aWV3LWJlYXV0aWZ1/bC1yYWluYm93LW5h/dHVyZS1sYW5kc2Nh/cGVfMjMtMjE1MTU5/NzYwNS5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw"
+            alt="Nature Photo"
+            class="w-full h-64 object-cover rounded-lg shadow-lg animate-fadeInUp"
+          />
+          <img
+            src="https://imgs.search.brave.com/HTtAgSunfJkrkdbHy8xD2hBfu-ZRPFXy8P5B1khxu8k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/ZW9wbGUtY2VsZWJy/YXRpbmctbmV3LXll/YXItcy1ldmUtdGhl/aXItdHJhZGl0aW9u/YWwtY3VsdHVyZV8y/My0yMTUwOTAxOTA4/LmpwZz9zaXplPTYy/NiZleHQ9anBn"
+            alt="Culture Photo"
+            class="w-full h-64 object-cover rounded-lg shadow-lg animate-fadeInUp"
+          />
         </div>
+      </div>
     </section>
 
     <!-- Health Certifications Section -->
     <section id="health-certifications" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Health Certifications</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">We adhere to global health and safety standards. All our partners are certified to ensure that your travel is not only enjoyable but also meets the highest safety protocols.</p>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Health Certifications
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp">
+          We adhere to global health and safety standards. All our partners are
+          certified to ensure that your travel is not only enjoyable but also
+          meets the highest safety protocols.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 mt-4">
+        <!-- Certification Card 1 -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-72">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+            Certification 1
+          </h3>
+          <p class="text-gray-600">
+            Description of the certification, including details about its
+            relevance and importance in ensuring health and safety.
+          </p>
         </div>
+        <!-- Certification Card 2 -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-72">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+            Certification 2
+          </h3>
+          <p class="text-gray-600">
+            Description of the certification, including details about its
+            relevance and importance in ensuring health and safety.
+          </p>
+        </div>
+        <!-- Certification Card 3 -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-72">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+            Certification 3
+          </h3>
+          <p class="text-gray-600">
+            Description of the certification, including details about its
+            relevance and importance in ensuring health and safety.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Hidden Gems Section -->
     <section id="hidden-gems" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Discover Hidden Gems</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">Explore secret locations and enjoy exclusive surprises during your travels. We take pride in offering experiences that go beyond the usual tourist paths, revealing the true essence of each destination.</p>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Discover Hidden Gems
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp">
+          Explore secret locations and enjoy exclusive surprises during your
+          travels. We take pride in offering experiences that go beyond the
+          usual tourist paths, revealing the true essence of each destination.
+        </p>
+      </div>
     </section>
 
     <!-- Blog Section -->
     <section id="blog" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Travel Blog</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 bg-gray-100 rounded-lg shadow-lg animate-fadeInUp">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800"><a href="https://youtube.com">Top 10 Hidden Gems in Europe</a></h3>
-                    <p class="text-gray-600">Explore lesser-known destinations across Europe that offer stunning views and unforgettable experiences.</p>
-                </div>
-                <div class="p-6 bg-gray-100 rounded-lg shadow-lg animate-fadeInUp">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">How to Travel Sustainably</h3>
-                    <p class="text-gray-600">Learn tips and tricks for reducing your carbon footprint while traveling and making a positive impact on the environment.</p>
-                </div>
-                <div class="p-6 bg-gray-100 rounded-lg shadow-lg animate-fadeInUp">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Cultural Etiquette Around the World</h3>
-                    <p class="text-gray-600">Discover the dos and don'ts of cultural etiquette in various countries to ensure a respectful and enriching travel experience.</p>
-                </div>
-            </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Travel Blog
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 bg-gray-100 rounded-lg shadow-lg animate-fadeInUp">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              <a href="https://youtube.com">Top 10 Hidden Gems in Europe</a>
+            </h3>
+            <p class="text-gray-600">
+              Explore lesser-known destinations across Europe that offer
+              stunning views and unforgettable experiences.
+            </p>
+          </div>
+          <div class="p-6 bg-gray-100 rounded-lg shadow-lg animate-fadeInUp">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              How to Travel Sustainably
+            </h3>
+            <p class="text-gray-600">
+              Learn tips and tricks for reducing your carbon footprint while
+              traveling and making a positive impact on the environment.
+            </p>
+          </div>
+          <div class="p-6 bg-gray-100 rounded-lg shadow-lg animate-fadeInUp">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              Cultural Etiquette Around the World
+            </h3>
+            <p class="text-gray-600">
+              Discover the dos and don'ts of cultural etiquette in various
+              countries to ensure a respectful and enriching travel experience.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Partnerships and Collaborations Section -->
     <section id="partnerships" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Partnerships & Collaborations</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">We collaborate with leading service providers to ensure you have everything you need at your fingertips. Book your travel, accommodations, and experiences all in one place, with exclusive benefits and seamless integration.</p>
+    
+
+      <!-- Partnerships & Collaborations Section -->
+      <section id="partnerships-collaborations" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">
+            Partnerships & Collaborations
+          </h2>
+          <p class="text-lg text-gray-600 text-center mb-16">
+            We collaborate with leading companies and organizations to deliver
+            unparalleled services and solutions. Here are some of our trusted
+            partners.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <!-- Partner 1 -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <img
+                src="https://media.istockphoto.com/id/1336832604/photo/male-teenage-student-in-yellow-background-stock-photo.jpg?s=2048x2048&w=is&k=20&c=2aDORiMJQW72BlWMtw1kq0VKqFBWyh7wlbKNZeHbm5E="
+                alt="Partner 1 Logo"
+                class="h-20 mx-auto mb-6"
+              />
+              <h3 class="text-2xl font-semibold text-gray-800 text-center mb-4">
+                Aman
+              </h3>
+              <p class="text-gray-600 text-center">
+                Aman is a global leader in providing innovative solutions
+                in the technology sector, ensuring top-notch quality and
+                reliability.
+              </p>
+            </div>
+            <!-- Partner 2 -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519456264917-42d0aa2e0625?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJveXxlbnwwfHwwfHx8MA%3D%3D"
+                alt="Partner 2 Logo"
+                class="h-20 mx-auto mb-6"
+              />
+              <h3 class="text-2xl font-semibold text-gray-800 text-center mb-4">
+                Akash
+              </h3>
+              <p class="text-gray-600 text-center">
+                Akash specializes in sustainable development and is a
+                pioneer in creating eco-friendly solutions for modern
+                businesses.
+              </p>
+            </div>
+            <!-- Partner 3 -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1615868167768-6fe2e8eaacd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym95fGVufDB8fDB8fHww"
+                alt="Partner 3 Logo"
+                class="h-20 mx-auto mb-6"
+              />
+              <h3 class="text-2xl font-semibold text-gray-800 text-center mb-4">
+                Amanwa
+              </h3>
+              <p class="text-gray-600 text-center">
+                Amanwa is renowned for its exceptional customer service and
+                innovative approaches in the finance industry.
+              </p>
+            </div>
+            <!-- Add more partners as needed -->
+          </div>
         </div>
+      </section>
     </section>
 
     <!-- Culture and Heritage Section -->
     <section id="culture" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">Rich Culture & Heritage</h2>
-            <p class="text-lg text-gray-600 animate-fadeInUp">Dive deep into the rich cultures and heritage of the places you visit. From local cuisine to traditional clothing, we ensure that you experience the true heart of each destination, making your travels meaningful and memorable.</p>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-fadeInUp">
+          Rich Culture & Heritage
+        </h2>
+        <p class="text-lg text-gray-600 animate-fadeInUp">
+          Dive deep into the rich cultures and heritage of the places you visit.
+          From local cuisine to traditional clothing, we ensure that you
+          experience the true heart of each destination, making your travels
+          meaningful and memorable.
+        </p>
+      </div>
+
+      <!-- Rich Culture & Heritage Section -->
+     <section id="culture-heritage" class="py-20 bg-gradient-to-br from-yellow-50 to-orange-100">
+    
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-10">
+        <!-- Culture Block 1 -->
+        <div class="culture-card bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 relative overflow-hidden">
+          <img src="https://media.ipassio.com/media/blog/indian-traditional-dance-forms-that-the-world-looks-up-to/blog_icon/indian-traditional-dance-forms-that-the-world-looks-up-to.webp" alt="Traditional Dance" class="w-full h-56 object-cover mb-4 rounded-lg transition-transform duration-500 hover:scale-110">
+          <h3 class="text-2xl font-semibold text-orange-700 mb-2">Traditional Dance</h3>
+          <p class="text-gray-600 mb-4">
+            Experience the beauty of traditional dances that tell stories of joy, struggle, and celebration through graceful movements.
+          </p>
+          <span class="absolute top-4 right-4 bg-orange-700 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse">New</span>
         </div>
+        <!-- Culture Block 2 -->
+        <div class="culture-card bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 relative overflow-hidden">
+          <img src="https://www.desiblitz.com/wp-content/uploads/2019/09/The-Famous-Handicrafts-of-Gujarat-State-f1.jpg" alt="Handicrafts" class="w-full h-56 object-cover mb-4 rounded-lg transition-transform duration-500 hover:scale-110">
+          <h3 class="text-2xl font-semibold text-orange-700 mb-2">Handicrafts</h3>
+          <p class="text-gray-600 mb-4">
+            Our traditional handicrafts reflect a rich history of creativity and artistry passed down through generations.
+          </p>
+          <span class="absolute top-4 right-4 bg-orange-700 text-white px-3 py-1 rounded-full text-sm font-semibold animate-bounce">Hot</span>
+        </div>
+        <!-- Culture Block 3 -->
+        <div class="culture-card bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105 relative overflow-hidden">
+          <img src="https://www.14gaam.com/Image/Historic-Events-of-India-Independence.jpg" alt="Historical Monuments" class="w-full h-56 object-cover mb-4 rounded-lg transition-transform duration-500 hover:scale-110">
+          <h3 class="text-2xl font-semibold text-orange-700 mb-2">Historical Monuments</h3>
+          <p class="text-gray-600 mb-4">
+            Visit our breathtaking historical monuments that stand as a testament to our rich cultural and architectural heritage.
+          </p>
+          <span class="absolute top-4 right-4 bg-orange-700 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse">Explore</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto text-center">
-            <p class="text-sm">&copy; 2024 Travel & Tourism | All Rights Reserved</p>
-        </div>
+      <div class="container mx-auto text-center">
+        <p class="text-sm">
+          &copy; 2024 Travel & Tourism | All Rights Reserved
+        </p>
+      </div>
     </footer>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
